@@ -58,5 +58,8 @@ while True:
     if query == "q" or query == "quit":
         break
 
-    print(chain.run({"query": query}))
+    try:
+        print(chain.run({"query": query}))
+    except Exception as e:
+        print(e)
     print("\n---\n")
