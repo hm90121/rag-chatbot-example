@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "rag-chatbot-example"
+version = "0.1.0"
+description = ""
+authors = ["Geet Sethi <geetsethi05@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rich = "^13.6.0"
+pypdf = "^3.16.4"
+langchain = "^0.0.319"
+chromadb = "^0.4.14"
+openai = "^0.28.1"
+python-dotenv = "^1.0.0"
+tiktoken = "^0.5.1"
+sentence-transformers = "^2.2.2"
+torch = ">=2.0.0, !=2.0.1, !=2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.0"
+pylint = "^3.0.1"
+ipykernel = "^6.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
