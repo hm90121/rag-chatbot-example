@@ -13,8 +13,9 @@ from langchain.chains import RetrievalQA
 
 # Load environement variables and make sure required environment variables exist
 load_dotenv()
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-if OPENAI_API_KEY == "":
+try:
+    OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+except KeyError:
     print(
         "[red]The API key for OPENAI was not set. Please set the environemnt variable [bold]OPENAI_API_KEY[/bold] either through the file '.env' or through your shell."
     )

@@ -13,8 +13,9 @@ from langchain.chains import RetrievalQA
 
 # Load environement variables and make sure required environment variables exist
 load_dotenv()
-HUGGINGFACE_API_KEY = os.environ["HUGGINGFACE_API_KEY"]
-if HUGGINGFACE_API_KEY == "":
+try:
+    HUGGINGFACE_API_KEY = os.environ["HUGGINGFACE_API_KEY"]
+except KeyError:
     print(
         "[red]The API key for HuggingFace was not set. Please set the environemnt variable [bold]HUGGINGFACE_API_KEY[/bold] either through the file '.env' or through your shell."
     )
