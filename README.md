@@ -1,6 +1,6 @@
 # RAG ChatBot example
 
-This is a simple example to showcase how a ChatBot can be made that can answer questions based on data that is provided by us later ie. not during the training of the llm.
+This is a simple example to showcase how a ChatBot can be made that can answer questions based on data that is provided by us later ie. not during the training of the LLM.
 
 ## Providers
 
@@ -8,9 +8,11 @@ Currently, there are 2 providers for LLMs. These are OpenAI and HuggingFace (HF)
 
 ## Usage
 
-- Acquire and set required API keys in the environment variables according to which model you want to use. For example, set `OPENAI_API_KEY` if you want to use OpenAI's llm (by running `using_openai.py`).
-- Install required dependencies using `poetry` or by creating a virtual environment maunally and installing the dependencies using `pip`.
-- Run the file you want (either `using_openai.py` or `using_hf.py`).
+- Acquire and set required API keys in the environment variables according to which model you want to use. For example, set `OPENAI_API_KEY` if you want to use OpenAI's LLM (by running `using_openai.py`).
+- Install required dependencies using `poetry` or by creating a virtual environment manually and installing the dependencies using `pip install -r requirements.txt`.
+- Run the file you want (either `using_openai.py`, `using_hf.py` or `using_hf_local.py`).
+
+> **NOTE**: You do not need to obtain and set a API key if you are using `using_hf_local.py` to run the model locally.
 
 ## Example Questions
 
@@ -35,4 +37,4 @@ Here are a few questions asked to the bot along with the answers that the bot ga
   Ans: Yes, a person can do both NCC and NSS as long as they register for one at the beginning of the first two
   semesters. They are also allowed to take NSS/NSO/NCC in subsequent years if they have a special interest.
 
-:warning: **NOTE:** The answers given above are generated using OpenAI's LLMs though, you can use others from HuggingFace by running the file `using_hf.py` and changing the `repo_id` in the model creation part.
+> :warning: **NOTE:** The answers given above are generated using OpenAI's LLMs though, you can use others from HuggingFace by running the file `using_hf.py` and changing the `repo_id` in the model creation part.
