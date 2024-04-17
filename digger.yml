@@ -1,3 +1,30 @@
-projects:
-- name: production
-  dir: prod
+name: Digger Terraform Automation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  digger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16'
+
+      - name: Install Digger
+        run: |
+          go get github.com/diggerhq/digger/cmd/digger
+
+      - name: Run Digger
+        run: digger apply --auto-approve
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
