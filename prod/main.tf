@@ -18,3 +18,4 @@ resource "aws_instance" "web" {
 
 }
 // digger apply
+//digger apply 2 
