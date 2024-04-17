@@ -17,3 +17,4 @@ resource "aws_instance" "web" {
     }
 
 }
+// digger apply
